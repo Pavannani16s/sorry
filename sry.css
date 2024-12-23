@@ -1,0 +1,70 @@
+body{
+    background-color:grey;
+
+}
+
+.card {
+    padding: 10px;
+    width: 50vw;
+    height: 45vh;
+    aspect-ratio: 1 / 0.7;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.5s ease-in-out;
+    margin: auto;
+}
+.card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+.card .image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+.card .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100%;
+    border-radius: inherit;
+    transition: 0.5s ease-in-out;
+}
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 5px solid rgb(10, 124, 133);
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+.card:hover img {
+    filter: grayscale(1) brightness(0.4);
+}
+.card:hover::after {
+    opacity: 1;
+    inset: 20px;
+}
+.content {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+.card:hover .content {
+    opacity: 1;
+    visibility: visible;
+}
+h1{
+    color: blueviolet;
+}
+h2{
+    color: palevioletred;
+}
